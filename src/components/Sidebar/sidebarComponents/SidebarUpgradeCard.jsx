@@ -3,10 +3,10 @@ import { PiLockKeyOpen } from "react-icons/pi";
 import { HiOutlineArrowRightCircle } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
 
-function SidebarUpgradeCard() {
+function SidebarUpgradeCard({toggleSidebar}) {
   const [hide, setHide] = useState(false);
   return (
-    <div className={`text-slidebarColor bg-upgradeCardColor bg-opacity-20 text-sm m-5 p-5 rounded-md ${hide && "hidden"}`}>
+    <div className={`text-slidebarColor bg-upgradeCardColor bg-opacity-20 text-sm m-5 p-5 rounded-md ${hide && "hidden"} ${toggleSidebar && "hidden"}`}>
       <div className="relative">
         <div
           className="absolute top-0 right-0 text-xl text-gray-400 hover:text-gray-300 transition-text duration-200  cursor-pointer"

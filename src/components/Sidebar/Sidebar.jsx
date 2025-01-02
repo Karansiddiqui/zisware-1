@@ -9,6 +9,7 @@ import SidebarUpgradeCard from "./sidebarComponents/SidebarUpgradeCard.jsx";
 export function Sidebar() {
   const sidebarRef = useRef(null);
   const [activeItem, setActiveItem] = useState("");
+  const [toggleSidebar, setToggleSidebar] = useState(false); // Track sidebar visibility
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -23,10 +24,25 @@ export function Sidebar() {
   }, []);
 
   return (
-    <div className="w-[15.25rem] bg-sidebarColor" ref={sidebarRef}>
-      <div className="fixed border border-r-[1px] border-transparent flex flex-col top-0 left-0 h-screen w-[15.25rem] bg-sidebarColor text-white">
+    <div
+      className={`${
+        toggleSidebar ? "w-[3.7rem]" : "w-[15.25rem]"
+      }  bg-sidebarColor`}
+      ref={sidebarRef}
+      onMouseEnter={
+        toggleSidebar ? () => setToggleSidebar((prev) => !prev) : undefined
+      }
+      onMouseLeave={
+        !toggleSidebar ? () => setToggleSidebar((prev) => !prev) : undefined
+      }
+    >
+      <div
+        className={`fixed border border-r-[1px] border-transparent flex flex-col top-0 left-0 h-screen ${
+          toggleSidebar ? "w-[3.7rem]" : "w-[15.25rem]"
+        } bg-sidebarColor text-white`}
+      >
         {/* Sidebar Header */}
-        <SidebarHeader />
+        <SidebarHeader setToggleSidebar={setToggleSidebar} />
 
         {/* Content Section */}
         <div className="h-[calc(100vh-4rem)] overflow-y-auto sliderbar hover:cursor-pointer">
@@ -65,7 +81,7 @@ export function Sidebar() {
           </div>
         </div>
 
-        <SidebarUpgradeCard />
+        <SidebarUpgradeCard toggleSidebar={toggleSidebar} />
       </div>
     </div>
   );
