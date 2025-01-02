@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-Thin.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-Thin.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-ExtraLight.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-ExtraLight.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-Light.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-Light.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-Regular.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-Regular.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-Medium.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-Medium.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-SemiBold.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-SemiBold.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-Bold.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-Bold.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-ExtraBold.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-ExtraBold.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("/assets/fonts/inter/Inter-Black.woff2?v=3.18") format("woff2"),
+    url("/assets/fonts/inter/Inter-Black.woff?v=3.18") format("woff");
+}
+/* -------------------------------------------------------
+Variable font.
+Usage:
+
+  html { font-family: 'Inter', sans-serif; }
+  @supports (font-variation-settings: normal) {
+    html { font-family: 'Inter var', sans-serif; }
+  }
+*/
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: auto;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("Inter-roman.var.woff2?v=3.18") format("woff2");
+}
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: auto;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("Inter-italic.var.woff2?v=3.18") format("woff2");
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+/* Beautify the scrollbar */
+/* For Webkit browsers like Chrome, Safari */
+.sliderbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sliderbar::-webkit-scrollbar-button {
+  display: none; /* Removes both vertical and horizontal arrows */
+}
+
+.sliderbar::-webkit-scrollbar-button:start {
+  display: none; /* Removes the upper vertical arrow */
+}
+
+.sliderbar::-webkit-scrollbar-button:end {
+  display: none; /* Removes the lower vertical arrow */
+}
+
+.sliderbar::-webkit-scrollbar-track {
+  background: #252b36; /* Track color */
+}
+
+.sliderbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6b7280, #e5e7eb); /* Thumb color */
+  border-radius: 6px;
+  margin-right: 2px;
+}
